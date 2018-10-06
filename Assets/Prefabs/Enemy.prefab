@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 4347144391227754, guid: 836c91a17c7a53f47bc56fe4d7c5e2ad, type: 2}
   - {fileID: 4022031137220208, guid: 836c91a17c7a53f47bc56fe4d7c5e2ad, type: 2}
   - {fileID: 4640917623816496, guid: 836c91a17c7a53f47bc56fe4d7c5e2ad, type: 2}
+  moveSpeed: 2
 --- !u!212 &212894128462152566
 SpriteRenderer:
   m_ObjectHideFlags: 1
