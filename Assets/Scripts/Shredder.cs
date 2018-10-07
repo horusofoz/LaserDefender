@@ -18,7 +18,7 @@ public class Shredder : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collided with " + collision.gameObject.name);
+        Debug.Log("Shredder hit by " + collision.gameObject.name);
         Destroy(collision.gameObject);
     }
 }
