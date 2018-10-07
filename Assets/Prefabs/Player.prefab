@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4809070970443034}
   - component: {fileID: 212612450294597648}
   - component: {fileID: 114407265053885054}
+  - component: {fileID: 60775838085566018}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -41,6 +42,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &60775838085566018
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746881713719424}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.99, y: 0.75}
+    newSize: {x: 0.99, y: 0.75}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.4872659, y: 0.10437608}
+      - {x: 0.35749653, y: -0.003276825}
+      - {x: 0.13273406, y: 0.12930107}
+      - {x: 0.07828356, y: 0.3827343}
+      - {x: -0.105, y: 0.375}
+      - {x: -0.12953188, y: 0.13531208}
+      - {x: -0.36296475, y: -0.0071845055}
+      - {x: -0.5001559, y: 0.09757829}
+      - {x: -0.4717978, y: -0.2527337}
+      - {x: -0.4017978, y: -0.2411735}
+      - {x: -0.145, y: -0.295}
+      - {x: -0.095, y: -0.375}
+      - {x: 0.08695384, y: -0.375}
+      - {x: 0.15445721, y: -0.27984405}
+      - {x: 0.40343958, y: -0.23148584}
+      - {x: 0.46921977, y: -0.2550001}
 --- !u!114 &114407265053885054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -58,6 +99,7 @@ MonoBehaviour:
     type: 2}
   projectileSpeed: 20
   projectileFiringPeriod: 0.25
+  health: 100
 --- !u!212 &212612450294597648
 SpriteRenderer:
   m_ObjectHideFlags: 1
