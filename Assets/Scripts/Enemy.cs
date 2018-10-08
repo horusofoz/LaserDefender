@@ -13,13 +13,14 @@ public class Enemy : MonoBehaviour {
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = 1f;
+    [SerializeField] SoundManager soundManager;
 
     // Use this for initialization
     void Start () 
 	{
         shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
 	}
-	
+	 
 	// Update is called once per frame
 	void Update () 
 	{
@@ -40,6 +41,7 @@ public class Enemy : MonoBehaviour {
     {
         GameObject laser = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
         laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        soundManager.TriggerEnemyShotSFX();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -62,7 +64,8 @@ public class Enemy : MonoBehaviour {
     private void Die()
     {
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
-        Destroy(gameObject);
         Destroy(explosion, durationOfExplosion);
+        soundManager.TriggerEnemyDeadSFX();
+        Destroy(gameObject);
     }
 }

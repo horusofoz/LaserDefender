@@ -16,6 +16,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float projectileFiringPeriod = 0.5f;
 
     [SerializeField] float health = 100f;
+    [SerializeField] SoundManager soundManager;
 
     Coroutine firingCoroutine;
 
@@ -76,7 +77,7 @@ public class Player : MonoBehaviour {
         {
             GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
-
+            soundManager.TriggerPlayerShotSFX();
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
@@ -94,7 +95,13 @@ public class Player : MonoBehaviour {
         damageDealer.Hit();
         if(health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        soundManager.TriggerPlayerDeadSFX();
     }
 }

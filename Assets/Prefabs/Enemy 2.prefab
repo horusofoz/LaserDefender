@@ -77,6 +77,8 @@ MonoBehaviour:
   projectileSpeed: 10
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
   durationOfExplosion: 1
+  soundManager: {fileID: 114921986145794914, guid: a0d641fc669a6d14ca224c2ad79c2571,
+    type: 2}
 --- !u!114 &114515483618271390
 MonoBehaviour:
   m_ObjectHideFlags: 1
