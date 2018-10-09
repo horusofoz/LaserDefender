@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerShotSFX: {fileID: 8300000, guid: db35b1369401dc346a8e10c07c090061, type: 3}
-  playerDeadSFX: {fileID: 8300000, guid: b3f98de84f6e58b4d8583f7cf1622785, type: 3}
+  playerDeadSFX: {fileID: 8300000, guid: e28ba7d26c4cc1d4dbcfe56ef16c289d, type: 3}
   enemyDeadSFX: {fileID: 8300000, guid: b3f98de84f6e58b4d8583f7cf1622785, type: 3}
   enemyShotSFX: {fileID: 8300000, guid: 06cf93aa4699f5e4593c8d44c2226449, type: 3}
   masterVolume: 0.3

@@ -17,6 +17,8 @@ public class Player : MonoBehaviour {
 
     [SerializeField] float health = 100f;
     [SerializeField] SoundManager soundManager;
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float durationOfExplosion = 1f;
 
     Coroutine firingCoroutine;
 
@@ -103,5 +105,7 @@ public class Player : MonoBehaviour {
     {
         Destroy(gameObject);
         soundManager.TriggerPlayerDeadSFX();
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        Destroy(explosion, durationOfExplosion);
     }
 }
