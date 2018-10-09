@@ -107,5 +107,6 @@ public class Player : MonoBehaviour {
         soundManager.TriggerPlayerDeadSFX();
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
+        FindObjectOfType<Level>().LoadGameOver();
     }
 }
