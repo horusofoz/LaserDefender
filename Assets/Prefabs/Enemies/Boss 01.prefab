@@ -40,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1930164905570738}
   m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -104,10 +104,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  scoreValue: 250
+  scoreValue: 2000
   minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
-  projectile: {fileID: 1213662963255890, guid: eebae86b23beb8143a602e825566a8ee, type: 2}
+  maxTimeBetweenShots: 1
+  projectile: {fileID: 1213662963255890, guid: 368300ae12719364b8dd6f6b65254a09, type: 2}
   projectileSpeed: 15
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
   durationOfExplosion: 1
