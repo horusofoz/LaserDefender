@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
 
-    [SerializeField] float health = 100f;
+    [SerializeField] int health = 100;
     [SerializeField] SoundManager soundManager;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = 1f;
@@ -108,5 +108,10 @@ public class Player : MonoBehaviour {
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
         FindObjectOfType<Level>().LoadGameOver();
+    }
+
+    public int GetHealth()
+    {
+        return health;
     }
 }
