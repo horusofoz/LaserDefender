@@ -42,7 +42,14 @@ public class EnemyPathing : MonoBehaviour {
         }
         else
         {
-            Destroy(gameObject);
+            if(gameObject.name.StartsWith("Enemy"))
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                waypointIndex = 1;
+            }
         }
     }
 }
