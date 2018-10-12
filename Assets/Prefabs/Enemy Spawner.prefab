@@ -51,9 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633b3c38c5a02cf4dae9180f5cf73c9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfigs:
-  - {fileID: 11400000, guid: 7e0bbf02aafe7324e9da39212b26ed81, type: 2}
-  - {fileID: 11400000, guid: fbb6e8e92578a634aa3224e635c0365e, type: 2}
-  - {fileID: 11400000, guid: 5acc5baf4ccdace4b844e9824d4fd527, type: 2}
-  - {fileID: 11400000, guid: 5ab01ddc1fb895c42893098aacde24d7, type: 2}
+  waveConfigs: []
   startingWave: 0
+  looping: 0

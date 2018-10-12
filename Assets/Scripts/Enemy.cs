@@ -75,5 +75,9 @@ public class Enemy : MonoBehaviour {
         FindObjectOfType<GameSession>().AddToScore(scoreValue);
         soundManager.TriggerEnemyDeadSFX();
         Destroy(gameObject);
+        if(gameObject.name.StartsWith("Boss"))
+        {
+            FindObjectOfType<Level>().LoadGameOver();
+        }
     }
 }
