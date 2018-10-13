@@ -8,6 +8,9 @@ public class GameSession : MonoBehaviour {
     int score = 0;
     [SerializeField] int health = 100;
     [SerializeField] int shieldHealth = 0;
+    [SerializeField] public int shieldLayer01 = 100;
+    [SerializeField] public int shieldLayer02 = 200;
+    [SerializeField] public int shieldLayer03 = 300;
 
     private void Awake()
     {

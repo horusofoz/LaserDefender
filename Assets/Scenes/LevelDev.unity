@@ -483,6 +483,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 461875276}
   m_CullTransparentMesh: 0
+--- !u!1 &555242686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1651526860012270, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1426042694}
 --- !u!1001 &570782174
 Prefab:
   m_ObjectHideFlags: 0
@@ -588,7 +593,6 @@ GameObject:
   m_Component:
   - component: {fileID: 601960360}
   - component: {fileID: 601960362}
-  - component: {fileID: 601960361}
   m_Layer: 0
   m_Name: Shield Slider 03
   m_TagString: Untagged
@@ -608,25 +612,14 @@ RectTransform:
   m_Children:
   - {fileID: 843712753}
   - {fileID: 1943848842}
-  m_Father: {fileID: 227043837}
-  m_RootOrder: 4
+  m_Father: {fileID: 1085063249}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: 0, y: 840.11993}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &601960361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 601960359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4f8964129ca4546a9a0823b4980b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &601960362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -828,7 +821,6 @@ GameObject:
   m_Component:
   - component: {fileID: 833695885}
   - component: {fileID: 833695887}
-  - component: {fileID: 833695886}
   m_Layer: 0
   m_Name: Shield Slider 02
   m_TagString: Untagged
@@ -848,25 +840,14 @@ RectTransform:
   m_Children:
   - {fileID: 461875277}
   - {fileID: 2036867610}
-  m_Father: {fileID: 227043837}
-  m_RootOrder: 3
+  m_Father: {fileID: 1085063249}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: 0, y: 840.11993}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &833695886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 833695884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4f8964129ca4546a9a0823b4980b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &833695887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,6 +1110,57 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1047354544}
   m_CullTransparentMesh: 0
+--- !u!1 &1085063248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085063249}
+  - component: {fileID: 1085063250}
+  m_Layer: 0
+  m_Name: Shield Display
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1085063249
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1085063248}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1174706212}
+  - {fileID: 833695885}
+  - {fileID: 601960360}
+  m_Father: {fileID: 227043837}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1085063250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1085063248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4f8964129ca4546a9a0823b4980b76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shield01: {fileID: 1927304231}
+  shield02: {fileID: 555242686}
+  shield03: {fileID: 1830112342}
 --- !u!1001 &1085841882
 Prefab:
   m_ObjectHideFlags: 0
@@ -1192,7 +1224,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1174706212}
   - component: {fileID: 1174706214}
-  - component: {fileID: 1174706213}
   m_Layer: 0
   m_Name: Shield Slider 01
   m_TagString: Untagged
@@ -1212,25 +1243,14 @@ RectTransform:
   m_Children:
   - {fileID: 1390795850}
   - {fileID: 1541724445}
-  m_Father: {fileID: 227043837}
-  m_RootOrder: 2
+  m_Father: {fileID: 1085063249}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -70}
+  m_AnchoredPosition: {x: 0, y: 840.11993}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1174706213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1174706211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f4f8964129ca4546a9a0823b4980b76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1174706214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1675,11 +1695,21 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1822245004}
   m_CullTransparentMesh: 0
+--- !u!1 &1830112342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1018326883925618, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1426042694}
 --- !u!4 &1850648150 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4278473471177710, guid: f6ef7b56c4d047840bcf656f0cd1b887,
     type: 2}
   m_PrefabInternal: {fileID: 601296558}
+--- !u!1 &1927304231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1087726403072142, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1426042694}
 --- !u!1001 &1932906480
 Prefab:
   m_ObjectHideFlags: 0

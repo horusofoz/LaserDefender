@@ -42,7 +42,9 @@ public class Player : MonoBehaviour {
 	{
         Move();
         Fire();
-	}
+        
+
+    }
 
     private void Fire()
     {
