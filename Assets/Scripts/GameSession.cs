@@ -6,7 +6,8 @@ using UnityEngine;
 public class GameSession : MonoBehaviour {
 
     int score = 0;
-    int health = 100;
+    [SerializeField] int health = 100;
+    [SerializeField] int shieldHealth = 0;
 
     private void Awake()
     {
@@ -39,5 +40,42 @@ public class GameSession : MonoBehaviour {
     public void ResetGame()
     {
         Destroy(gameObject);
+    }
+
+    public int GetHealth()
+    {
+        return health;
+    }
+
+    public void SubtractHealth(int healthValue)
+    {
+        if(shieldHealth > 0)
+        {
+            SubtractShieldHealth(healthValue);
+        }
+        else
+        {
+            health -= healthValue;
+        }
+    }
+
+    public void AddHealth(int healthValue)
+    {
+        health += healthValue;
+    }
+
+    public int GetShieldHealth()
+    {
+        return shieldHealth;
+    }
+
+    public void SubtractShieldHealth(int healthValue)
+    {
+        shieldHealth -= healthValue;
+    }
+
+    public void AddShieldHealth(int healthValue)
+    {
+        shieldHealth += healthValue;
     }
 }

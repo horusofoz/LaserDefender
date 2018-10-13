@@ -7,18 +7,16 @@ using TMPro;
 public class HealthDisplay : MonoBehaviour {
 
     Slider healthSlider;
-    Player player;
+    GameSession gameSession;
 
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
         healthSlider = GameObject.Find("Health Slider").GetComponent<Slider>();
-        player = FindObjectOfType<Player>();
+        gameSession = FindObjectOfType<GameSession>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        healthSlider.value = player.GetHealth();
+        healthSlider.value = gameSession.GetHealth();
     }
 }

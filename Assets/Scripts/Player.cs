@@ -15,25 +15,26 @@ public class Player : MonoBehaviour {
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
 
-    [SerializeField] int health = 100;
     [SerializeField] SoundManager soundManager;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = 1f;
 
     Coroutine firingCoroutine;
+    GameSession gameSession;
 
     float xMin;
     float xMax;
     float yMin;
     float yMax;
 
-    // Use this for initialization
+    private void Awake()
+    {
+        gameSession = FindObjectOfType<GameSession>();
+    }
+
     void Start () 
 	{
         SetUpMoveBoundaries();
-
-        
-
 	}
 
     // Update is called once per frame
@@ -93,9 +94,9 @@ public class Player : MonoBehaviour {
 
     private void ProcessHit(DamageDealer damageDealer)
     {
-        health -= damageDealer.GetDamage();
+        gameSession.SubtractHealth(damageDealer.GetDamage());
         damageDealer.Hit();
-        if(health <= 0)
+        if(gameSession.GetHealth() <= 0)
         {
             Die();
         }
@@ -108,10 +109,5 @@ public class Player : MonoBehaviour {
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
         FindObjectOfType<Level>().LoadGameOver();
-    }
-
-    public int GetHealth()
-    {
-        return health;
     }
 }
