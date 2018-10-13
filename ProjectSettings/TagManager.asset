@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Pick Ups
+    uniqueID: 3000074939
+    locked: 0
   - name: Projectiles
     uniqueID: 3024038417
     locked: 0
