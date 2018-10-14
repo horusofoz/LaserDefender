@@ -51,3 +51,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 834fa3cfbfc44c545b2db6a07874403d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  shieldHealth: 0
+  shieldLayer01: 100
+  shieldLayer02: 200
+  shieldLayer03: 300
+  collectiblesList:
+  - {fileID: 1403256727449646, guid: 79f3b136805a7ce4fb67c741b1259e70, type: 2}
+  - {fileID: 1403256727449646, guid: 1738a517cf7555f409edc07986733a84, type: 2}
+  - {fileID: 1403256727449646, guid: 6c48168d21c30f744a2d5c9be34b8761, type: 2}

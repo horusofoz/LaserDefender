@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour {
     [Header("Enemy Stats")]
     [SerializeField] float health = 100;
     [SerializeField] int scoreValue;
+    [SerializeField] GameObject collectibleItem = null;
 
     [Header("Shooting")]
     float shotCounter;
@@ -75,9 +76,20 @@ public class Enemy : MonoBehaviour {
         FindObjectOfType<GameSession>().AddToScore(scoreValue);
         soundManager.TriggerEnemyDeadSFX();
         Destroy(gameObject);
+
+        if(collectibleItem != null)
+        {
+            Instantiate(collectibleItem, transform.position, Quaternion.identity);
+        }
+
         if(gameObject.name.StartsWith("Boss"))
         {
             FindObjectOfType<Level>().LoadGameOver();
         }
+    }
+
+    public void SetCollectibleItem(GameObject collectible)
+    {
+        collectibleItem = collectible;
     }
 }

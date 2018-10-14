@@ -1,18 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Enemy Wave Config")]
+[CreateAssetMenu(menuName = "Wave Config")]
 
 public class WaveConfig : ScriptableObject {
 
+    [Header("Enemy")]
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject pathPrefab;
     [SerializeField] float timeBetweenSpawns = 0.5f;
     [SerializeField] float spawnRandomFactor = 0.3f;
-    [SerializeField] int numberOfEnemies = 5;
+    [SerializeField] int numberOfEnemies = 0;
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float delaySpawn = 0f;
+
+    [Header("Collectible")]
+    [SerializeField] float collectibleSpawnChance = 0.5f;
+    [SerializeField] GameObject collectibleItem = null;
+    [SerializeField] int enemyToSpawnCollectible = -1;
 
     public GameObject GetEnemyPrefab() { return enemyPrefab; }
 
@@ -37,5 +44,45 @@ public class WaveConfig : ScriptableObject {
     public float GetDelayNextSpawn()
     {
         return delaySpawn;
+    }
+
+    private void OnEnable()
+    {
+        if(collectibleSpawnChance > 0)
+        {
+            float collectibleSpawnRoll = UnityEngine.Random.Range(0f, 1f);
+            if(collectibleSpawnRoll <= collectibleSpawnChance)
+            {
+                SetCollectibleToSpawn();
+                SetEnemyToSpawnCollectible();
+            }
+        }
+    }
+
+    private void SetEnemyToSpawnCollectible()
+    {
+        if(enemyToSpawnCollectible == -1)
+        {
+            enemyToSpawnCollectible = UnityEngine.Random.Range(0, numberOfEnemies);
+        }
+    }
+
+    private void SetCollectibleToSpawn()
+    {
+        if(collectibleItem == null)
+        {
+            List<GameObject> collectibleItemList = FindObjectOfType<GameSession>().GetCollectiblesList();
+            collectibleItem = collectibleItemList[UnityEngine.Random.Range(0, collectibleItemList.Count)];
+        }
+    }
+
+    public int GetEnemyToSpawnCollectible()
+    {
+        return enemyToSpawnCollectible;
+    }
+
+    public GameObject GetCollectibleToSpawn()
+    {
+        return collectibleItem;
     }
 }

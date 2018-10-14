@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114793776093490128}
   - component: {fileID: 95971041856472354}
   m_Layer: 0
-  m_Name: Shield Gold
+  m_Name: Shield Silver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropSpeed: 3
-  shieldValue: 100
-  scoreValue: 2000
+  shieldValue: 50
+  scoreValue: 1500
 --- !u!212 &212905084828498312
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -156,7 +156,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c846793e9ed2a46469938ea1246adef9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c5ee294440c6e64985a113682d6afce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

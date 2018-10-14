@@ -12,6 +12,8 @@ public class GameSession : MonoBehaviour {
     [SerializeField] public int shieldLayer02 = 200;
     [SerializeField] public int shieldLayer03 = 300;
 
+    [SerializeField] List<GameObject> collectiblesList;
+
     private void Awake()
     {
         SetUpSingleton();
@@ -80,5 +82,10 @@ public class GameSession : MonoBehaviour {
     public void AddShieldHealth(int healthValue)
     {
         shieldHealth += healthValue;
+    }
+
+    public List<GameObject> GetCollectiblesList()
+    {
+        return collectiblesList;
     }
 }

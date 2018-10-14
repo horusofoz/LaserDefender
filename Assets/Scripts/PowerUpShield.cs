@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour {
+public class PowerUpShield : MonoBehaviour {
 
     private Rigidbody2D rigidbody2D;
     private bool active = true;
     [SerializeField] private int dropSpeed = 3;
+    [SerializeField] int shieldValue = 25;
+    [SerializeField] int scoreValue = 1000;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,10 +30,9 @@ public class PowerUp : MonoBehaviour {
 
         // Apply effect to player
         GameSession gameSession = FindObjectOfType<GameSession>();
-        gameSession.AddShieldHealth(gameSession.shieldLayer01);
-        gameSession.AddToScore(1000);
+        gameSession.AddShieldHealth(shieldValue);
+        gameSession.AddToScore(scoreValue);
         
-
         // Remove power up object
         Destroy(gameObject, 1f);
     }
@@ -43,6 +44,6 @@ public class PowerUp : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        rigidbody2D.velocity = new Vector2(transform.position.x, -dropSpeed);
+        rigidbody2D.velocity = Vector2.down * dropSpeed;
     }
 }

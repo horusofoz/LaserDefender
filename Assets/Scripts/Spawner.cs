@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour {
+public class Spawner : MonoBehaviour {
 
     [SerializeField] List<WaveConfig> waveConfigs;
     [SerializeField] int startingWave = 0;
@@ -43,6 +43,11 @@ public class EnemySpawner : MonoBehaviour {
             Quaternion.identity);
 
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfig);
+
+            if(enemyCount == waveConfig.GetEnemyToSpawnCollectible() -1)
+            {
+                newEnemy.GetComponent<Enemy>().SetCollectibleItem(waveConfig.GetCollectibleToSpawn());
+            }
 
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
         }
