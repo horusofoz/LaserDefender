@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4644723230580232}
   - component: {fileID: 212288298071866284}
+  - component: {fileID: 95130794596662090}
   m_Layer: 0
   m_Name: Shield 03
   m_TagString: Untagged
@@ -36,13 +37,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4881906646759660}
   - component: {fileID: 212929897074992966}
+  - component: {fileID: 95408287506495170}
   m_Layer: 0
   m_Name: Shield 01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1651526860012270
 GameObject:
   m_ObjectHideFlags: 0
@@ -52,6 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4511978975558402}
   - component: {fileID: 212901248478745296}
+  - component: {fileID: 95152154257657486}
   m_Layer: 0
   m_Name: Shield 02
   m_TagString: Untagged
@@ -98,7 +101,7 @@ Transform:
   m_GameObject: {fileID: 1018326883925618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 4809070970443034}
   m_RootOrder: 2
@@ -172,6 +175,60 @@ PolygonCollider2D:
       - {x: 0.15445721, y: -0.27984405}
       - {x: 0.40343958, y: -0.23148584}
       - {x: 0.46921977, y: -0.2550001}
+--- !u!95 &95130794596662090
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1018326883925618}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 878c72e41bb5de844aa0d81b2265112c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95152154257657486
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1651526860012270}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99be7f5a2f91e644393037682fd8a75b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95408287506495170
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1087726403072142}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43e5acfcd36f20c48ad76eeff2690b2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114407265053885054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,10 +242,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   padding: 0.5
-  laserPrefab: {fileID: 1980672961782698, guid: 64f8c9a670d540848b156b262aed1e47,
+  laserPrefab: {fileID: 1881306574095542, guid: a9bc7736f533f51419c9c32b26168325,
     type: 2}
-  projectileSpeed: 10
-  projectileFiringPeriod: 0.25
+  projectileSpeed: 15
+  projectileFiringPeriod: 0.3
   soundManager: {fileID: 114921986145794914, guid: a0d641fc669a6d14ca224c2ad79c2571,
     type: 2}
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
