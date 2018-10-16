@@ -11,7 +11,8 @@ public class Player : MonoBehaviour {
     [SerializeField] float padding = .5f;
 
     [Header("Projectile")]
-    [SerializeField] GameObject laserPrefab;
+    //[SerializeField] GameObject weapon;
+    GameObject weapon;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
 
@@ -35,7 +36,8 @@ public class Player : MonoBehaviour {
     void Start () 
 	{
         SetUpMoveBoundaries();
-	}
+        UpdateWeaponConfig();
+    }
 
     // Update is called once per frame
     void Update () 
@@ -80,7 +82,7 @@ public class Player : MonoBehaviour {
     {
         while(true)
         {
-            GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity) as GameObject;
+            GameObject laser = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
             soundManager.TriggerPlayerShotSFX();
             yield return new WaitForSeconds(projectileFiringPeriod);
@@ -111,5 +113,12 @@ public class Player : MonoBehaviour {
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
         FindObjectOfType<Level>().LoadGameOver();
+    }
+
+    public void UpdateWeaponConfig()
+    {
+        GameObject NewWeapon = gameSession.GetWeapon();
+        this.weapon = NewWeapon;
+        Debug.Log("Player weapon set to " + weapon.gameObject.name);
     }
 }

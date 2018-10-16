@@ -5,18 +5,28 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour {
 
-    int score = 0;
+    [Header("Shield")]
     [SerializeField] int health = 100;
     [SerializeField] int shieldHealth = 0;
     [SerializeField] public int shieldLayer01 = 100;
     [SerializeField] public int shieldLayer02 = 200;
     [SerializeField] public int shieldLayer03 = 300;
 
+    [Header("Projectile")]
+    GameObject weapon;
+    [SerializeField] int _weaponLevel = 0;
+    [SerializeField] float projectileSpeed = 10f;
+    [SerializeField] float projectileFiringPeriod = 0.5f;
+    [SerializeField] List<GameObject> weaponsList;
+
+    [Header("Other")]
     [SerializeField] List<GameObject> collectiblesList;
+    int score = 0;
 
     private void Awake()
     {
         SetUpSingleton();
+        SetWeapon(0);
     }
 
     private void SetUpSingleton()
@@ -87,5 +97,16 @@ public class GameSession : MonoBehaviour {
     public List<GameObject> GetCollectiblesList()
     {
         return collectiblesList;
+    }
+
+    public GameObject GetWeapon()
+    {
+        return weapon;
+    }
+
+    public void SetWeapon(int newWeaponLevel)
+    {
+        _weaponLevel = Mathf.Clamp(newWeaponLevel, 0, weaponsList.Count - 1);
+        weapon = weaponsList[_weaponLevel];
     }
 }
