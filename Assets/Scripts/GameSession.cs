@@ -14,13 +14,14 @@ public class GameSession : MonoBehaviour {
 
     [Header("Projectile")]
     GameObject weapon;
-    [SerializeField] int _weaponLevel = 0;
+    int _weaponLevel = 0;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
     [SerializeField] List<GameObject> weaponsList;
 
     [Header("Other")]
     [SerializeField] List<GameObject> collectiblesList;
+    [SerializeField] GameObject player;
     int score = 0;
 
     private void Awake()
@@ -106,7 +107,26 @@ public class GameSession : MonoBehaviour {
 
     public void SetWeapon(int newWeaponLevel)
     {
+
         _weaponLevel = Mathf.Clamp(newWeaponLevel, 0, weaponsList.Count - 1);
+        
         weapon = weaponsList[_weaponLevel];
+        player.GetComponent<Player>().UpdateWeaponConfig();
+    }
+
+    private void TestWeaponUpgrade()
+    {
+        if(Input.GetKeyDown(KeyCode.U))
+        {
+            Debug.Log("Weapon Level before increment is: " + _weaponLevel);
+            Debug.Log("WeaponList Count is:");
+            SetWeapon(++_weaponLevel);
+            Debug.Log("Weapon Level after increment is: " + _weaponLevel);
+        }
+    }
+
+    private void Update()
+    {
+        TestWeaponUpgrade();
     }
 }
