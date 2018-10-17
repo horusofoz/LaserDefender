@@ -56,7 +56,6 @@ MonoBehaviour:
   shieldLayer01: 100
   shieldLayer02: 200
   shieldLayer03: 300
-  _weaponLevel: 0
   projectileSpeed: 10
   projectileFiringPeriod: 0.5
   weaponsList:
@@ -67,8 +66,13 @@ MonoBehaviour:
   - {fileID: 1887452870143290, guid: b559fc6bfd9ca4348ad88e0069242b92, type: 2}
   - {fileID: 1072230386287610, guid: 2e8a09588b2ee0a498dea7869c2a75d3, type: 2}
   - {fileID: 1907885236347772, guid: a282f094b9d990c488aa85bec3bce280, type: 2}
+  weaponBoostVFX: {fileID: 198977288171166498, guid: 55888a111f9dcb14e8a4740d723d14b0,
+    type: 2}
   collectiblesList:
   - {fileID: 1403256727449646, guid: 79f3b136805a7ce4fb67c741b1259e70, type: 2}
   - {fileID: 1403256727449646, guid: 1738a517cf7555f409edc07986733a84, type: 2}
   - {fileID: 1403256727449646, guid: 6c48168d21c30f744a2d5c9be34b8761, type: 2}
+  - {fileID: 1609657599525944, guid: 15279b09edc92d04f905666097c6b0b8, type: 2}
+  - {fileID: 1508970208184836, guid: d6a8c4a9a56a75245ac1e59e585c94e1, type: 2}
+  - {fileID: 1487161669060064, guid: 7b7e0b00f14f09e4aa3f53a4b4b81a60, type: 2}
   player: {fileID: 0}

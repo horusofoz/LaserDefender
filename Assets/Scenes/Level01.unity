@@ -1013,6 +1013,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 1751319841387980, guid: a76be9dd1e96d8b4fb3094a34428369f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a76be9dd1e96d8b4fb3094a34428369f, type: 2}
   m_IsPrefabAsset: 0
@@ -1568,22 +1572,6 @@ Prefab:
     - target: {fileID: 4809070970443034, guid: 9a61d21848d1c914eb4294cc41f8a8c6, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407265053885054, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
-        type: 2}
-      propertyPath: laserPrefab
-      value: 
-      objectReference: {fileID: 1907885236347772, guid: a282f094b9d990c488aa85bec3bce280,
-        type: 2}
-    - target: {fileID: 114407265053885054, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
-        type: 2}
-      propertyPath: projectileSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 114407265053885054, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
-        type: 2}
-      propertyPath: projectileFiringPeriod
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a61d21848d1c914eb4294cc41f8a8c6, type: 2}

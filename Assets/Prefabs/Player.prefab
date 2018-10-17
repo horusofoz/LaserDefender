@@ -242,10 +242,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   padding: 0.5
-  laserPrefab: {fileID: 1881306574095542, guid: a9bc7736f533f51419c9c32b26168325,
-    type: 2}
   projectileSpeed: 15
-  projectileFiringPeriod: 0.3
+  projectileFiringPeriod: 0.2
+  weaponBoostVFX: {fileID: 198977288171166498, guid: 55888a111f9dcb14e8a4740d723d14b0,
+    type: 2}
   soundManager: {fileID: 114921986145794914, guid: a0d641fc669a6d14ca224c2ad79c2571,
     type: 2}
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
