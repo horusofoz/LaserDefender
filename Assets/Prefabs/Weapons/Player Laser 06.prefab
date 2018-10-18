@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4674293718343418}
   - component: {fileID: 50773689219521354}
+  - component: {fileID: 114264101344043750}
   m_Layer: 0
   m_Name: Player Laser 06
   m_TagString: Untagged
@@ -264,6 +265,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
+--- !u!114 &114264101344043750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072230386287610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfe27aceaf6774c9d82990e208a351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 10
+  projectileFiringPeriod: 0.5
 --- !u!114 &114520125357166638
 MonoBehaviour:
   m_ObjectHideFlags: 1

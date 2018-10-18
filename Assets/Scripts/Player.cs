@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
     [SerializeField] float durationOfExplosion = 1f;
 
     Coroutine firingCoroutine;
+    [SerializeField] GameObject gameSessionObject;
     GameSession gameSession;
 
     float xMin;
@@ -30,7 +31,7 @@ public class Player : MonoBehaviour {
 
     private void Awake()
     {
-        gameSession = FindObjectOfType<GameSession>();
+        gameSession = gameSession.GetComponent<GameSession>();
     }
 
     void Start () 
@@ -119,6 +120,8 @@ public class Player : MonoBehaviour {
     {
         GameObject NewWeapon = gameSession.GetWeapon();
         this.weapon = NewWeapon;
+        projectileFiringPeriod = weapon.GetComponent<WeaponConfig>().GetProjectileFiringPeriod();
+        projectileSpeed = weapon.GetComponent<WeaponConfig>().GetProjectileSpeed();
         Debug.Log("Player weapon set to " + weapon.gameObject.name);
     }
 }

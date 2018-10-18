@@ -21,6 +21,9 @@ public class WaveConfig : ScriptableObject {
     [SerializeField] GameObject collectibleItem = null;
     [SerializeField] int enemyToSpawnCollectible = -1;
 
+    [Header("Other")]
+    [SerializeField] GameObject gameSession;
+
     public GameObject GetEnemyPrefab() { return enemyPrefab; }
 
     public List<Transform> GetWaypoints()
@@ -71,7 +74,7 @@ public class WaveConfig : ScriptableObject {
     {
         if(collectibleItem == null)
         {
-            List<GameObject> collectibleItemList = FindObjectOfType<GameSession>().GetCollectiblesList();
+            List<GameObject> collectibleItemList = gameSession.GetComponent<GameSession>().GetCollectiblesList();
             collectibleItem = collectibleItemList[UnityEngine.Random.Range(0, collectibleItemList.Count)];
         }
     }

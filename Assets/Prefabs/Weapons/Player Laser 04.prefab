@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4092407448761892}
   - component: {fileID: 50828632890198592}
+  - component: {fileID: 114945352647200724}
   m_Layer: 0
   m_Name: Player Laser 04
   m_TagString: Untagged
@@ -300,6 +301,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+--- !u!114 &114945352647200724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1434172942266846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfe27aceaf6774c9d82990e208a351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 10
+  projectileFiringPeriod: 0.5
 --- !u!212 &212150027051125696
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 50733097495885318}
   - component: {fileID: 58848307749990830}
   - component: {fileID: 114398995364980092}
+  - component: {fileID: 114547187624044746}
+  - component: {fileID: 114107812224599522}
   m_Layer: 10
   m_Name: Player Laser 01
   m_TagString: Untagged
@@ -78,6 +80,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.24
+--- !u!114 &114107812224599522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1980672961782698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfe27aceaf6774c9d82990e208a351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 10
+  projectileFiringPeriod: 0.5
 --- !u!114 &114398995364980092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +105,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &114547187624044746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1980672961782698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47dfe27aceaf6774c9d82990e208a351, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 7.5
+  projectileFiringPeriod: 0.5
 --- !u!212 &212030242485401110
 SpriteRenderer:
   m_ObjectHideFlags: 1

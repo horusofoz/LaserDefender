@@ -1573,6 +1573,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114407265053885054, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
+        type: 2}
+      propertyPath: gameSessionObject
+      value: 
+      objectReference: {fileID: 2027470060}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a61d21848d1c914eb4294cc41f8a8c6, type: 2}
   m_IsPrefabAsset: 0
@@ -2012,6 +2017,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1983328415}
   m_CullTransparentMesh: 0
+--- !u!1 &2027470060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1800344835281908, guid: 0baaf6937dc2d634bb83101a33475cf9,
+    type: 2}
+  m_PrefabInternal: {fileID: 570782174}
 --- !u!1 &2036867609
 GameObject:
   m_ObjectHideFlags: 0

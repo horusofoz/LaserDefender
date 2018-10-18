@@ -108,29 +108,10 @@ public class GameSession : MonoBehaviour {
 
     public void SetWeapon(int weaponBoostValue)
     {
-
-        _weaponLevel = Mathf.Clamp((_weaponLevel + weaponBoostValue), 0, weaponsList.Count - 1);
-        
+        _weaponLevel = Mathf.Clamp((_weaponLevel + weaponBoostValue), 0, weaponsList.Count - 1);   
         weapon = weaponsList[_weaponLevel];
-
         player.GetComponent<Player>().UpdateWeaponConfig();
         PlayWeaponBoostVFX();
-    }
-
-    private void TestWeaponUpgrade()
-    {
-        if(Input.GetKeyDown(KeyCode.U))
-        {
-            Debug.Log("Weapon Level before increment is: " + _weaponLevel);
-            Debug.Log("WeaponList Count is:");
-            SetWeapon(++_weaponLevel);
-            Debug.Log("Weapon Level after increment is: " + _weaponLevel);
-        }
-    }
-
-    private void Update()
-    {
-        TestWeaponUpgrade();
     }
 
     private void PlayWeaponBoostVFX()
