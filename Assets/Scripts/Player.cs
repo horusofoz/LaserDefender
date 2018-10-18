@@ -11,7 +11,6 @@ public class Player : MonoBehaviour {
     [SerializeField] float padding = .5f;
 
     [Header("Projectile")]
-    //[SerializeField] GameObject weapon;
     GameObject weapon;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
@@ -21,18 +20,11 @@ public class Player : MonoBehaviour {
     [SerializeField] float durationOfExplosion = 1f;
 
     Coroutine firingCoroutine;
-    [SerializeField] GameObject gameSessionObject;
-    GameSession gameSession;
 
     float xMin;
     float xMax;
     float yMin;
     float yMax;
-
-    private void Awake()
-    {
-        gameSession = gameSession.GetComponent<GameSession>();
-    }
 
     void Start () 
 	{
@@ -40,13 +32,10 @@ public class Player : MonoBehaviour {
         UpdateWeaponConfig();
     }
 
-    // Update is called once per frame
     void Update () 
 	{
         Move();
         Fire();
-        
-
     }
 
     private void Fire()
@@ -99,9 +88,9 @@ public class Player : MonoBehaviour {
 
     private void ProcessHit(DamageDealer damageDealer)
     {
-        gameSession.SubtractHealth(damageDealer.GetDamage());
+        GameSession.Instance.SubtractHealth(damageDealer.GetDamage());
         damageDealer.Hit();
-        if(gameSession.GetHealth() <= 0)
+        if(GameSession.Instance.GetHealth() <= 0)
         {
             Die();
         }
@@ -113,12 +102,12 @@ public class Player : MonoBehaviour {
         soundManager.TriggerPlayerDeadSFX();
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
-        FindObjectOfType<Level>().LoadGameOver();
+        GameSession.Instance.LoadGameOver();
     }
 
     public void UpdateWeaponConfig()
     {
-        GameObject NewWeapon = gameSession.GetWeapon();
+        GameObject NewWeapon = GameSession.Instance.GetWeapon();
         this.weapon = NewWeapon;
         projectileFiringPeriod = weapon.GetComponent<WeaponConfig>().GetProjectileFiringPeriod();
         projectileSpeed = weapon.GetComponent<WeaponConfig>().GetProjectileSpeed();

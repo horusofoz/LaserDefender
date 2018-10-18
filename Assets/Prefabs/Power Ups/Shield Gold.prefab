@@ -121,6 +121,8 @@ MonoBehaviour:
   dropSpeed: 3
   shieldValue: 100
   scoreValue: 2000
+  gameSession: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
+    type: 2}
 --- !u!212 &212905084828498312
 SpriteRenderer:
   m_ObjectHideFlags: 1

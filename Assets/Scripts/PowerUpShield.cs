@@ -29,9 +29,8 @@ public class PowerUpShield : MonoBehaviour {
         animator.Play("Shield Picked Up");
 
         // Apply effect to player
-        GameSession gameSession = FindObjectOfType<GameSession>();
-        gameSession.AddShieldHealth(shieldValue);
-        gameSession.AddToScore(scoreValue);
+        GameSession.Instance.AddShieldHealth(shieldValue);
+        GameSession.Instance.AddToScore(scoreValue);
         
         // Remove power up object
         Destroy(gameObject, 1f);

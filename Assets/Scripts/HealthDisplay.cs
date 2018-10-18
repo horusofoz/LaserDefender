@@ -17,6 +17,6 @@ public class HealthDisplay : MonoBehaviour {
 
     void Update()
     {
-        healthSlider.value = gameSession.GetHealth();
+        healthSlider.value = GameSession.Instance.GetHealth();
     }
 }

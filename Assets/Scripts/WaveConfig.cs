@@ -74,7 +74,7 @@ public class WaveConfig : ScriptableObject {
     {
         if(collectibleItem == null)
         {
-            List<GameObject> collectibleItemList = gameSession.GetComponent<GameSession>().GetCollectiblesList();
+            List<GameObject> collectibleItemList = GameSession.Instance.GetCollectiblesList();
             collectibleItem = collectibleItemList[UnityEngine.Random.Range(0, collectibleItemList.Count)];
         }
     }

@@ -71,8 +71,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4809070970443034}
   - component: {fileID: 212612450294597648}
-  - component: {fileID: 114407265053885054}
   - component: {fileID: 60775838085566018}
+  - component: {fileID: 114407265053885054}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -244,12 +244,12 @@ MonoBehaviour:
   padding: 0.5
   projectileSpeed: 15
   projectileFiringPeriod: 0.2
-  weaponBoostVFX: {fileID: 198977288171166498, guid: 55888a111f9dcb14e8a4740d723d14b0,
-    type: 2}
   soundManager: {fileID: 114921986145794914, guid: a0d641fc669a6d14ca224c2ad79c2571,
     type: 2}
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
   durationOfExplosion: 1
+  gameSession: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
+    type: 2}
 --- !u!212 &212288298071866284
 SpriteRenderer:
   m_ObjectHideFlags: 1

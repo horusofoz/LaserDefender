@@ -56,6 +56,8 @@ MonoBehaviour:
   shieldLayer01: 100
   shieldLayer02: 200
   shieldLayer03: 300
+  weapon: {fileID: 1980672961782698, guid: 64f8c9a670d540848b156b262aed1e47, type: 2}
+  _weaponLevel: 0
   projectileSpeed: 10
   projectileFiringPeriod: 0.5
   weaponsList:
@@ -76,3 +78,4 @@ MonoBehaviour:
   - {fileID: 1508970208184836, guid: d6a8c4a9a56a75245ac1e59e585c94e1, type: 2}
   - {fileID: 1487161669060064, guid: 7b7e0b00f14f09e4aa3f53a4b4b81a60, type: 2}
   player: {fileID: 0}
+  level: {fileID: 0}

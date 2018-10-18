@@ -119,8 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropSpeed: 3
-  weaponBoostValue: 3
+  weaponBoostValue: 2
   scoreValue: 1500
+  gameSession: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
+    type: 2}
 --- !u!212 &212438901683794622
 SpriteRenderer:
   m_ObjectHideFlags: 1

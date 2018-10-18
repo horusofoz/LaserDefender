@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour {
 
+    public static GameSession Instance { get; private set; }
+
     [Header("Shield")]
     [SerializeField] int health = 100;
     [SerializeField] int shieldHealth = 0;
@@ -13,8 +15,8 @@ public class GameSession : MonoBehaviour {
     [SerializeField] public int shieldLayer03 = 300;
 
     [Header("Projectile")]
-    GameObject weapon;
-    int _weaponLevel = 0;
+    [SerializeField] GameObject weapon;
+    [SerializeField] int _weaponLevel = 0;
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
     [SerializeField] List<GameObject> weaponsList;
@@ -23,6 +25,7 @@ public class GameSession : MonoBehaviour {
     [Header("Other")]
     [SerializeField] List<GameObject> collectiblesList;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject level;
     int score = 0;
 
     private void Awake()
@@ -33,15 +36,18 @@ public class GameSession : MonoBehaviour {
 
     private void SetUpSingleton()
     {
-        int numberGameSessions = FindObjectsOfType<GameSession>().Length;
-        if(numberGameSessions > 1)
+        // First we check if there are any other instances conflicting
+        if (Instance != null && Instance != this)
         {
+            // If that is the case, we destroy other instances
             Destroy(gameObject);
         }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+
+        // Here we save our singleton instance
+        Instance = this;
+
+        // Furthermore we make sure that we don't destroy between scenes (this is optional)
+        DontDestroyOnLoad(gameObject);
     }
 
     public int GetScore()
@@ -121,5 +127,10 @@ public class GameSession : MonoBehaviour {
             ParticleSystem boostVFX = Instantiate(weaponBoostVFX, player.transform.position, Quaternion.identity);
             Destroy(boostVFX.gameObject, 1f);
         }
+    }
+
+    public void LoadGameOver()
+    {
+        level.GetComponent<Level>().LoadGameOver();
     }
 }

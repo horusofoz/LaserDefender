@@ -312,8 +312,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47dfe27aceaf6774c9d82990e208a351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileSpeed: 10
-  projectileFiringPeriod: 0.5
+  projectileSpeed: 12
+  projectileFiringPeriod: 0.3
 --- !u!212 &212097138847816980
 SpriteRenderer:
   m_ObjectHideFlags: 1

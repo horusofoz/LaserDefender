@@ -9,6 +9,7 @@ public class PowerUpWeaponBoost : MonoBehaviour {
     [SerializeField] private int dropSpeed = 3;
     [SerializeField] int weaponBoostValue = 1;
     [SerializeField] int scoreValue = 1000;
+    [SerializeField] GameSession gameSession;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,9 +29,8 @@ public class PowerUpWeaponBoost : MonoBehaviour {
         animator.Play("Boost Picked Up");
 
         // Apply effect to player
-        GameSession gameSession = FindObjectOfType<GameSession>();
-        gameSession.SetWeapon(weaponBoostValue);
-        gameSession.AddToScore(scoreValue);
+        GameSession.Instance.SetWeapon(weaponBoostValue);
+        GameSession.Instance.AddToScore(scoreValue);
 
         // Remove power up object
         Destroy(gameObject, 1f);

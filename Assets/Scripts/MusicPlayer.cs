@@ -6,22 +6,28 @@ using UnityEngine;
 public class MusicPlayer : MonoBehaviour
 {
 
-	// Use this for initialization
-	void Awake () 
+    public static MusicPlayer Instance { get; private set; }
+
+    // Use this for initialization
+    void Awake () 
 	{
         SetUpSingleton();
 	}
 
     private void SetUpSingleton()
     {
-        if(FindObjectsOfType(GetType()).Length > 1)
+        // First we check if there are any other instances conflicting
+        if (Instance != null && Instance != this)
         {
+            // If that is the case, we destroy other instances
             Destroy(gameObject);
         }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
+
+        // Here we save our singleton instance
+        Instance = this;
+
+        // Furthermore we make sure that we don't destroy between scenes (this is optional)
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
