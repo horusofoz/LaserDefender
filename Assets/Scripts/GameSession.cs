@@ -9,6 +9,7 @@ public class GameSession : MonoBehaviour {
 
     [Header("Shield")]
     [SerializeField] int health = 100;
+    int healthMax = 100;
     [SerializeField] int shieldHealth = 0;
     [SerializeField] public int shieldLayer01 = 100;
     [SerializeField] public int shieldLayer02 = 200;
@@ -79,7 +80,7 @@ public class GameSession : MonoBehaviour {
         }
         else
         {
-            health -= healthValue;
+            health = Mathf.Clamp((health -= healthValue), 0, healthMax);
         }
     }
 
@@ -100,7 +101,8 @@ public class GameSession : MonoBehaviour {
 
     public void AddShieldHealth(int healthValue)
     {
-        shieldHealth += healthValue;
+        shieldHealth = Mathf.Clamp((shieldHealth += healthValue), 0, shieldLayer03);
+        
     }
 
     public List<GameObject> GetCollectiblesList()
