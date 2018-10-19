@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour {
     {
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
-        FindObjectOfType<GameSession>().AddToScore(scoreValue);
+        GameSession.Instance.AddToScore(scoreValue);
         soundManager.TriggerEnemyDeadSFX();
         Destroy(gameObject);
 
@@ -84,7 +84,7 @@ public class Enemy : MonoBehaviour {
 
         if(gameObject.name.StartsWith("Boss"))
         {
-            FindObjectOfType<Level>().LoadGameOver();
+            SceneLoader.Instance.LoadGameOver();
         }
     }
 

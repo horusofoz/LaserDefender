@@ -55,9 +55,11 @@ MonoBehaviour:
   playerDeadSFX: {fileID: 8300000, guid: e28ba7d26c4cc1d4dbcfe56ef16c289d, type: 3}
   enemyDeadSFX: {fileID: 8300000, guid: b3f98de84f6e58b4d8583f7cf1622785, type: 3}
   enemyShotSFX: {fileID: 8300000, guid: 06cf93aa4699f5e4593c8d44c2226449, type: 3}
+  buttonClickSFX: {fileID: 8300000, guid: a7eaa102ca5904e4eab4cd783ff6bbad, type: 3}
   masterVolume: 0.3
   sFXVolume: 1
   playerShotVolume: 1
   playerDeadVolume: 1
   enemyShotVolume: 1
   enemyDeadVolume: 1
+  buttonClickVolume: 1

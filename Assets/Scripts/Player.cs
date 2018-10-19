@@ -102,7 +102,7 @@ public class Player : MonoBehaviour {
         soundManager.TriggerPlayerDeadSFX();
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
-        GameSession.Instance.LoadGameOver();
+        SceneLoader.Instance.LoadGameOver();
     }
 
     public void UpdateWeaponConfig()

@@ -11,8 +11,7 @@ public class HealthDisplay : MonoBehaviour {
 
     void Awake()
     {
-        healthSlider = GameObject.Find("Health Slider").GetComponent<Slider>();
-        gameSession = FindObjectOfType<GameSession>();
+        healthSlider = gameObject.GetComponent<Slider>();
     }
 
     void Update()

@@ -25,7 +25,6 @@ public class GameSession : MonoBehaviour {
     [Header("Other")]
     [SerializeField] List<GameObject> collectiblesList;
     [SerializeField] GameObject player;
-    [SerializeField] GameObject level;
     int score = 0;
 
     private void Awake()
@@ -37,17 +36,19 @@ public class GameSession : MonoBehaviour {
     private void SetUpSingleton()
     {
         // First we check if there are any other instances conflicting
-        if (Instance != null && Instance != this)
+        if (Instance != null)
         {
             // If that is the case, we destroy other instances
             Destroy(gameObject);
         }
+        else
+        {
+            // Here we save our singleton instance
+            Instance = this;
 
-        // Here we save our singleton instance
-        Instance = this;
-
-        // Furthermore we make sure that we don't destroy between scenes (this is optional)
-        DontDestroyOnLoad(gameObject);
+            // Furthermore we make sure that we don't destroy between scenes (this is optional)
+            DontDestroyOnLoad(gameObject);
+        }
     }
 
     public int GetScore()
@@ -114,10 +115,17 @@ public class GameSession : MonoBehaviour {
 
     public void SetWeapon(int weaponBoostValue)
     {
-        _weaponLevel = Mathf.Clamp((_weaponLevel + weaponBoostValue), 0, weaponsList.Count - 1);   
-        weapon = weaponsList[_weaponLevel];
-        player.GetComponent<Player>().UpdateWeaponConfig();
-        PlayWeaponBoostVFX();
+        if(player != null)
+        {
+            _weaponLevel = Mathf.Clamp((_weaponLevel + weaponBoostValue), 0, weaponsList.Count - 1);
+            weapon = weaponsList[_weaponLevel];
+            player.GetComponent<Player>().UpdateWeaponConfig();
+            PlayWeaponBoostVFX();
+        }
+        else
+        {
+            Debug.LogError("Player not set");
+        }
     }
 
     private void PlayWeaponBoostVFX()
@@ -127,10 +135,5 @@ public class GameSession : MonoBehaviour {
             ParticleSystem boostVFX = Instantiate(weaponBoostVFX, player.transform.position, Quaternion.identity);
             Destroy(boostVFX.gameObject, 1f);
         }
-    }
-
-    public void LoadGameOver()
-    {
-        level.GetComponent<Level>().LoadGameOver();
     }
 }

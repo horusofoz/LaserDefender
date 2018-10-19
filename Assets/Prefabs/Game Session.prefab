@@ -77,5 +77,4 @@ MonoBehaviour:
   - {fileID: 1609657599525944, guid: 15279b09edc92d04f905666097c6b0b8, type: 2}
   - {fileID: 1508970208184836, guid: d6a8c4a9a56a75245ac1e59e585c94e1, type: 2}
   - {fileID: 1487161669060064, guid: 7b7e0b00f14f09e4aa3f53a4b4b81a60, type: 2}
-  player: {fileID: 0}
-  level: {fileID: 0}
+  player: {fileID: 1746881713719424, guid: 9a61d21848d1c914eb4294cc41f8a8c6, type: 2}
