@@ -6,6 +6,7 @@ public class WeaponConfig : MonoBehaviour {
 
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
+    [SerializeField] List<float> projectileDirectionList;
 
     public float GetProjectileSpeed()
     {
@@ -15,5 +16,10 @@ public class WeaponConfig : MonoBehaviour {
     public float GetProjectileFiringPeriod()
     {
         return projectileFiringPeriod;
+    }
+
+    public List<float> GetProjectileDirections()
+    {
+        return projectileDirectionList;
     }
 }

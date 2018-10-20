@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+
 using UnityEngine;
 
 public class Player : MonoBehaviour {
@@ -72,8 +74,26 @@ public class Player : MonoBehaviour {
     {
         while(true)
         {
-            GameObject laser = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
-            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+            GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
+
+            // Get list of profile directions
+            List<float> projectileDirectionList = projectile.GetComponent<WeaponConfig>().GetProjectileDirections();
+
+            // Get children of projectile GameObject
+            List<Rigidbody2D> projectileRigidBodies = projectile.transform.GetComponentsInChildren<Rigidbody2D>().ToList();
+
+            // Set rBodyCounter for iterating through projectDirectionList
+            int rBodyCounter = 0;
+
+            // For Each child Of projectile
+            foreach (var rBody in projectileRigidBodies)
+            {
+                // Apply direction via Velocity
+                rBody.velocity = new Vector2(projectileDirectionList[rBodyCounter], projectileSpeed);
+
+                // Iterate rBodyCounter
+                rBodyCounter++;
+            }
             soundManager.TriggerPlayerShotSFX();
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
