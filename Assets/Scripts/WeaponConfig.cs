@@ -7,6 +7,8 @@ public class WeaponConfig : MonoBehaviour {
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
     [SerializeField] List<float> projectileDirectionList;
+    private float checkForChildrenPeriod =  1f;
+    private float timePassed;
 
     public float GetProjectileSpeed()
     {
@@ -21,5 +23,22 @@ public class WeaponConfig : MonoBehaviour {
     public List<float> GetProjectileDirections()
     {
         return projectileDirectionList;
+    }
+
+    public void DestroyWhenProjectilesExpended()
+    {
+        if (transform.childCount == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        timePassed += Time.deltaTime;
+        if(timePassed >= checkForChildrenPeriod)
+        {
+            DestroyWhenProjectilesExpended();
+        }
     }
 }

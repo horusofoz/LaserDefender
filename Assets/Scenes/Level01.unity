@@ -510,6 +510,38 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4389954571008688, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887823721093816, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284956608382268, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483389685915818, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4284956608382268, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483389685915818, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389954571008688, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4887823721093816, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 29
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 936a0d23b54228e4bab9bb9fb298eff5, type: 2}
   m_IsPrefabAsset: 0
@@ -554,7 +586,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1751319841387980, guid: a76be9dd1e96d8b4fb3094a34428369f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a76be9dd1e96d8b4fb3094a34428369f, type: 2}
