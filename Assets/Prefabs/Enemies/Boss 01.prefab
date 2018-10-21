@@ -20,11 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4247054425152072}
   - component: {fileID: 212172754844136286}
-  - component: {fileID: 114873875208402180}
   - component: {fileID: 58186048289242204}
-  - component: {fileID: 114568735011350758}
   - component: {fileID: 50655707005660134}
+  - component: {fileID: 114873875208402180}
   - component: {fileID: 114096710529442686}
+  - component: {fileID: 114568735011350758}
   m_Layer: 9
   m_Name: Boss 01
   m_TagString: Untagged
@@ -105,9 +105,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   scoreValue: 2000
+  collectibleItem: {fileID: 0}
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 1
-  projectile: {fileID: 1213662963255890, guid: 368300ae12719364b8dd6f6b65254a09, type: 2}
+  weapon: {fileID: 1698635758725630, guid: bb78418e925892a478fd329abdbf3bfc, type: 2}
   projectileSpeed: 15
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
   durationOfExplosion: 1
