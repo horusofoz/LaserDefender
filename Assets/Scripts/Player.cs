@@ -76,7 +76,7 @@ public class Player : MonoBehaviour {
         {
             GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
 
-            // Get list of profile directions
+            // Get list of projectile directions
             List<float> projectileDirectionList = projectile.GetComponent<WeaponConfig>().GetProjectileDirections();
 
             // Get children of projectile GameObject

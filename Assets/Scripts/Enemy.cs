@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,11 +11,11 @@ public class Enemy : MonoBehaviour {
     [SerializeField] int scoreValue;
     [SerializeField] GameObject collectibleItem = null;
 
-    [Header("Shooting")]
+    [Header("Projectile")]
     float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
     [SerializeField] float maxTimeBetweenShots = 3f;
-    [SerializeField] GameObject projectile;
+    [SerializeField] GameObject weapon;
     [SerializeField] float projectileSpeed = 10f;
 
     [Header("Sound Effects")]
@@ -47,9 +48,29 @@ public class Enemy : MonoBehaviour {
 
     private void Fire()
     {
-        GameObject laser = Instantiate(projectile, transform.position, Quaternion.identity) as GameObject;
-        laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -projectileSpeed);
+        // Instantiate weapon
+        GameObject projectile = Instantiate(weapon, transform.position, Quaternion.identity) as GameObject;
+
+        // Get list of projectile directions
+        List<float> projectileDirectionList = projectile.GetComponent<WeaponConfig>().GetProjectileDirections();
+
+        // Get children of projectile GameObject
+        List<Rigidbody2D> projectileRigidBodies = projectile.transform.GetComponentsInChildren<Rigidbody2D>().ToList();
+
+        // Set rBodyCounter for iterating through projectDirectionList
+        int rBodyCounter = 0;
+
+        // For Each child Of projectile
+        foreach (var rBody in projectileRigidBodies)
+        {
+            // Apply direction via Velocity
+            rBody.velocity = new Vector2(projectileDirectionList[rBodyCounter], -projectileSpeed);
+
+            // Iterate rBodyCounter
+            rBodyCounter++;
+        }
         soundManager.TriggerEnemyShotSFX();
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
