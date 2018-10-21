@@ -864,6 +864,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1746881713719424, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
     type: 2}
   m_PrefabInternal: {fileID: 273097189}
+--- !u!114 &1924355807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1924355802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9175b632193d74ab1e48431489ddd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!1 &1927304231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1087726403072142, guid: 9a61d21848d1c914eb4294cc41f8a8c6,
