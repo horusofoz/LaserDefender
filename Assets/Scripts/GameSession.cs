@@ -86,7 +86,7 @@ public class GameSession : MonoBehaviour {
 
     public void AddHealth(int healthValue)
     {
-        health += healthValue;
+        health = Mathf.Clamp((health += healthValue), 0, healthMax);
     }
 
     public int GetShieldHealth()

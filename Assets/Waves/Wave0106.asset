@@ -20,7 +20,8 @@ MonoBehaviour:
   moveSpeed: 3
   delaySpawn: 2
   collectibleSpawnChance: 0
-  collectibleItem: {fileID: 0}
+  collectibleItem: {fileID: 1403256727449646, guid: 6c48168d21c30f744a2d5c9be34b8761,
+    type: 2}
   enemyToSpawnCollectible: 0
   gameSession: {fileID: 1800344835281908, guid: 0baaf6937dc2d634bb83101a33475cf9,
     type: 2}
