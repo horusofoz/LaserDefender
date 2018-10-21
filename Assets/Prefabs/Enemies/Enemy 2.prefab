@@ -96,7 +96,7 @@ MonoBehaviour:
   collectibleItem: {fileID: 0}
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
-  weapon: {fileID: 1698635758725630, guid: 55984a34df4b19c4b8c5d45fab8ac499, type: 2}
+  weapon: {fileID: 1698635758725630, guid: 264fcd92322ab734b92c4e0223f224b8, type: 2}
   projectileSpeed: 10
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
   durationOfExplosion: 1

@@ -22,7 +22,9 @@ public class Enemy : MonoBehaviour {
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = 1f;
     [SerializeField] SoundManager soundManager;
-    
+
+    private bool onScreen = false;
+
 
     // Use this for initialization
     void Start () 
@@ -39,7 +41,7 @@ public class Enemy : MonoBehaviour {
     private void CountDownAndShoot()
     {
         shotCounter -= Time.deltaTime;
-        if(shotCounter <= 0f)
+        if(shotCounter <= 0f && onScreen)
         {
             Fire();
             shotCounter = UnityEngine.Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
@@ -101,6 +103,7 @@ public class Enemy : MonoBehaviour {
         if(collectibleItem != null)
         {
             Instantiate(collectibleItem, transform.position, Quaternion.identity);
+            Debug.Log("Spawning collectible: " + collectibleItem.name);
         }
 
         if(gameObject.name.StartsWith("Boss"))
@@ -112,5 +115,15 @@ public class Enemy : MonoBehaviour {
     public void SetCollectibleItem(GameObject collectible)
     {
         collectibleItem = collectible;
+    }
+
+    private void OnBecameVisible()
+    {
+        onScreen = true;
+    }
+
+    private void OnBecameInvisible()
+    {
+        onScreen = false;
     }
 }
