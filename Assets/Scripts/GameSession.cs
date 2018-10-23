@@ -24,6 +24,7 @@ public class GameSession : MonoBehaviour {
     [SerializeField] ParticleSystem weaponBoostVFX;
 
     [Header("Other")]
+    [SerializeField] int playerMovementSpeed = 4;
     [SerializeField] List<GameObject> collectiblesList;
     [SerializeField] GameObject player;
     int score = 0;
@@ -121,7 +122,7 @@ public class GameSession : MonoBehaviour {
         {
             _weaponLevel = Mathf.Clamp((_weaponLevel + weaponBoostValue), 0, weaponsList.Count - 1);
             weapon = weaponsList[_weaponLevel];
-            player.GetComponent<Player>().UpdateWeaponConfig();
+            player.GetComponent<Player>().SetWeapon();
             PlayWeaponBoostVFX();
         }
         else
@@ -137,5 +138,21 @@ public class GameSession : MonoBehaviour {
             ParticleSystem boostVFX = Instantiate(weaponBoostVFX, player.transform.position, Quaternion.identity);
             Destroy(boostVFX.gameObject, 1f);
         }
+    }
+
+    public int GetPlayerSpeed()
+    {
+        return playerMovementSpeed;
+    }
+
+    public void SetPlayerSpeed(int speedValue)
+    {
+        playerMovementSpeed = speedValue;
+    }
+
+    public void AddPlayerSpeed(int speedValue)
+    {
+        playerMovementSpeed += speedValue;
+        player.GetComponent<Player>().SetSpeed();
     }
 }

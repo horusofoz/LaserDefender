@@ -25,7 +25,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4254313595162794
 Transform:
@@ -72,6 +72,10 @@ MonoBehaviour:
   - {fileID: 1907885236347772, guid: abe85e61ed3c0f74b86e8dc3838b0530, type: 2}
   weaponBoostVFX: {fileID: 198977288171166498, guid: 55888a111f9dcb14e8a4740d723d14b0,
     type: 2}
+  playerMovementSpeed: 4
   collectiblesList:
   - {fileID: 1541315960410102, guid: 75b86cd57ae2cd04d9556f82d479894d, type: 2}
+  - {fileID: 1403256727449646, guid: 1738a517cf7555f409edc07986733a84, type: 2}
+  - {fileID: 1432918015762458, guid: 9b07cdb8a3425fb449412f171b6d29ff, type: 2}
+  - {fileID: 1609657599525944, guid: 15279b09edc92d04f905666097c6b0b8, type: 2}
   player: {fileID: 0}

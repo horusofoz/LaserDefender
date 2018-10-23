@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 
     // Configuration Parameters
     [Header("Player Movement")]
-    [SerializeField] float moveSpeed = 5f;
+    [SerializeField] int moveSpeed;
     [SerializeField] float padding = .5f;
 
     [Header("Projectile")]
@@ -31,7 +31,14 @@ public class Player : MonoBehaviour {
     void Start () 
 	{
         SetUpMoveBoundaries();
-        UpdateWeaponConfig();
+        SetPlayerStats();
+        
+    }
+
+    private void SetPlayerStats()
+    {
+        SetWeapon();
+        SetSpeed();
     }
 
     void Update () 
@@ -125,12 +132,18 @@ public class Player : MonoBehaviour {
         SceneLoader.Instance.LoadGameOver();
     }
 
-    public void UpdateWeaponConfig()
+    public void SetWeapon()
     {
         GameObject NewWeapon = GameSession.Instance.GetWeapon();
         this.weapon = NewWeapon;
         projectileFiringPeriod = weapon.GetComponent<WeaponConfig>().GetProjectileFiringPeriod();
         projectileSpeed = weapon.GetComponent<WeaponConfig>().GetProjectileSpeed();
-        Debug.Log("Player weapon set to " + weapon.gameObject.name);
+        //Debug.Log("Player weapon set to " + weapon.gameObject.name);
+    }
+
+    public void SetSpeed()
+    {
+        moveSpeed = GameSession.Instance.GetPlayerSpeed();
+        //Debug.Log("Player Speed After Update: " + moveSpeed);
     }
 }

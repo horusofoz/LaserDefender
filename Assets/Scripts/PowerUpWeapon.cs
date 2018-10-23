@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpShield : MonoBehaviour {
+public class PowerUpWeapon : MonoBehaviour {
 
     private Rigidbody2D rigidbody2D;
     private bool active = true;
     [SerializeField] private int dropSpeed = 3;
-    [SerializeField] int shieldValue = 25;
-    [SerializeField] int scoreValue = 1000;
+    [SerializeField] private int weaponBoostValue = 1;
+    [SerializeField] private int scoreValue = 1000;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player") && active == true)
+        if (other.CompareTag("Player") && active == true)
         {
             PickUp();
         }
@@ -23,15 +22,15 @@ public class PowerUpShield : MonoBehaviour {
     {
         // Prevent pickup being double dipped on
         active = false;
-        
+
         // Spawn a cool effect
         Animator animator = GetComponent<Animator>();
         animator.Play("Boost Collected");
 
         // Apply effect to player
-        GameSession.Instance.AddShieldHealth(shieldValue);
+        GameSession.Instance.SetWeapon(weaponBoostValue);
         GameSession.Instance.AddToScore(scoreValue);
-        
+
         // Remove power up object
         Destroy(gameObject, 1f);
     }

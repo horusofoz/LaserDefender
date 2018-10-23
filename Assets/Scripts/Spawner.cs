@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour {
         {
             var currentWave = waveConfigs[waveIndex];
 
-            Debug.Log("Spawning Wave: " + waveConfigs[waveIndex].name);
+            //Debug.Log("Spawning Wave: " + waveConfigs[waveIndex].name);
 
             // Wait until waveConfig.delayNextSpawn before spawning next wave
             yield return new WaitForSeconds(currentWave.GetDelayNextSpawn());
@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour {
             if(enemyCount == waveConfig.GetEnemyToSpawnCollectible())
             {
                 newEnemy.GetComponent<Enemy>().SetCollectibleItem(waveConfig.GetCollectibleToSpawn());
-                Debug.Log("Set collectiable to spawn " + waveConfig.GetCollectibleToSpawn() + " on Enemy " + enemyCount);
+                //Debug.Log("Set collectiable to spawn " + waveConfig.GetCollectibleToSpawn() + " on Enemy " + enemyCount);
             }
 
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());

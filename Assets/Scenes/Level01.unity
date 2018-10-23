@@ -340,11 +340,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.size
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4254313595162794, guid: 0baaf6937dc2d634bb83101a33475cf9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -382,52 +377,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1924355802}
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.data[1]
-      value: 
-      objectReference: {fileID: 1403256727449646, guid: 79f3b136805a7ce4fb67c741b1259e70,
-        type: 2}
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.data[2]
-      value: 
-      objectReference: {fileID: 1403256727449646, guid: 6c48168d21c30f744a2d5c9be34b8761,
-        type: 2}
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.data[3]
-      value: 
-      objectReference: {fileID: 1403256727449646, guid: 1738a517cf7555f409edc07986733a84,
-        type: 2}
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.data[4]
-      value: 
-      objectReference: {fileID: 1609657599525944, guid: 15279b09edc92d04f905666097c6b0b8,
-        type: 2}
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.data[5]
-      value: 
-      objectReference: {fileID: 1487161669060064, guid: 7b7e0b00f14f09e4aa3f53a4b4b81a60,
-        type: 2}
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.data[6]
-      value: 
-      objectReference: {fileID: 1508970208184836, guid: d6a8c4a9a56a75245ac1e59e585c94e1,
-        type: 2}
-    - target: {fileID: 1800344835281908, guid: 0baaf6937dc2d634bb83101a33475cf9, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-        type: 2}
-      propertyPath: collectiblesList.Array.data[0]
-      value: 
-      objectReference: {fileID: 1541315960410102, guid: 75b86cd57ae2cd04d9556f82d479894d,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0baaf6937dc2d634bb83101a33475cf9, type: 2}
   m_IsPrefabAsset: 0
