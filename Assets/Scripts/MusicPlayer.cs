@@ -8,6 +8,9 @@ public class MusicPlayer : MonoBehaviour
 
     public static MusicPlayer Instance { get; private set; }
 
+    [SerializeField] [Range(0, 1)] float musicVolume = 0.5f;
+    [SerializeField] AudioSource audioSource;
+
     // Use this for initialization
     void Awake () 
 	{
@@ -32,9 +35,16 @@ public class MusicPlayer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update () 
-	{
-		
-	}
+    public float GetMusicVolume()
+    {
+        return musicVolume;
+    }
+
+    public void SetMusicVolume(float newVolume)
+    {
+        musicVolume = newVolume;
+        audioSource.volume = musicVolume;
+    }
+
+
 }

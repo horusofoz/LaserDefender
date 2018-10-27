@@ -7,8 +7,10 @@ public class SoundManager : MonoBehaviour {
     public static SoundManager Instance { get; private set; }
 
     [SerializeField] AudioClip playerShotSFX, playerDeadSFX, enemyDeadSFX, enemyShotSFX, buttonClickSFX;
-    [SerializeField] [Range(0, 1)] float masterVolume = 1f;
-    [SerializeField] [Range(0, 1)] float sFXVolume = 1f;
+
+    [SerializeField] AudioSource audioSource;
+
+    [SerializeField] [Range(0, 1)] float sFXVolume = 0.5f;
     [SerializeField] [Range(0, 1)] float playerShotVolume = 1f;
     [SerializeField] [Range(0, 1)] float playerDeadVolume =  1f;
     [SerializeField] [Range(0, 1)] float enemyShotVolume = 1f;
@@ -18,6 +20,7 @@ public class SoundManager : MonoBehaviour {
     private void Awake()
     {
         SetUpSingleton();
+        SetSFXVolume(sFXVolume);
     }
 
     private void SetUpSingleton()
@@ -41,36 +44,37 @@ public class SoundManager : MonoBehaviour {
 
     public void TriggerPlayerShotSFX()
     {
-        AudioSource.PlayClipAtPoint(playerShotSFX, 
-            Camera.main.transform.position, 
-            playerShotVolume * (sFXVolume * masterVolume));
+        audioSource.PlayOneShot(playerShotSFX, (sFXVolume * playerShotVolume));
     }
 
     public void TriggerPlayerDeadSFX()
     {
-        AudioSource.PlayClipAtPoint(playerDeadSFX,
-            Camera.main.transform.position,
-            playerShotVolume * (sFXVolume * masterVolume));
+        audioSource.PlayOneShot(playerDeadSFX, (sFXVolume * playerDeadVolume));
     }
 
     public void TriggerEnemyShotSFX()
     {
-        AudioSource.PlayClipAtPoint(enemyShotSFX,
-            Camera.main.transform.position, 
-            enemyShotVolume * (sFXVolume * masterVolume));
+        audioSource.PlayOneShot(enemyShotSFX, (sFXVolume * enemyShotVolume));
     }
 
     public void TriggerEnemyDeadSFX()
     {
-        AudioSource.PlayClipAtPoint(enemyDeadSFX, 
-            Camera.main.transform.position, 
-            enemyShotVolume * (sFXVolume * masterVolume));
+        audioSource.PlayOneShot(enemyDeadSFX, (sFXVolume * enemyShotVolume));
     }
 
     public void TriggerButtonClickSFX()
     {
-        AudioSource.PlayClipAtPoint(enemyDeadSFX,
-            Camera.main.transform.position,
-            enemyShotVolume * (sFXVolume * masterVolume));
+        audioSource.PlayOneShot(enemyDeadSFX, (sFXVolume * enemyShotVolume));
+    }
+
+    public float GetSFXVolume()
+    {
+        return sFXVolume;
+    }
+
+    public void SetSFXVolume(float newVolume)
+    {
+        sFXVolume = newVolume;
+        audioSource.volume = sFXVolume;
     }
 }

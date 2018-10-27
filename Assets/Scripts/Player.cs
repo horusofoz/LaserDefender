@@ -17,7 +17,6 @@ public class Player : MonoBehaviour {
     [SerializeField] float projectileSpeed = 10f;
     [SerializeField] float projectileFiringPeriod = 0.5f;
 
-    [SerializeField] SoundManager soundManager;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = 1f;
 
@@ -101,7 +100,7 @@ public class Player : MonoBehaviour {
                 // Iterate rBodyCounter
                 rBodyCounter++;
             }
-            soundManager.TriggerPlayerShotSFX();
+            SoundManager.Instance.TriggerPlayerShotSFX();
             yield return new WaitForSeconds(projectileFiringPeriod);
         }
     }
@@ -126,7 +125,7 @@ public class Player : MonoBehaviour {
     private void Die()
     {
         Destroy(gameObject);
-        soundManager.TriggerPlayerDeadSFX();
+        SoundManager.Instance.TriggerPlayerDeadSFX();
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
         SceneLoader.Instance.LoadGameOver();
