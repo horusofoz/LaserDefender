@@ -365,10 +365,11 @@ MonoBehaviour:
   shieldSlider01: {fileID: 114321180655445864}
   shieldSlider02: {fileID: 114320040789909332}
   shieldSlider03: {fileID: 114320662128859666}
-  gameSession: {fileID: 0}
-  shield01: {fileID: 0}
-  shield02: {fileID: 0}
-  shield03: {fileID: 0}
+  gameSession: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
+    type: 2}
+  shield01: {fileID: 1085615041710666}
+  shield02: {fileID: 1305754001139840}
+  shield03: {fileID: 1758597536381054}
 --- !u!114 &114058064760560448
 MonoBehaviour:
   m_ObjectHideFlags: 1
