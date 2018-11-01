@@ -134,10 +134,10 @@ public class Player : MonoBehaviour {
     public void SetWeapon()
     {
         GameObject NewWeapon = GameSession.Instance.GetWeapon();
-        weapon = NewWeapon;
+        this.weapon = NewWeapon;
         projectileFiringPeriod = weapon.GetComponent<WeaponConfig>().GetProjectileFiringPeriod();
         projectileSpeed = weapon.GetComponent<WeaponConfig>().GetProjectileSpeed();
-        Debug.Log("Weapon on player set to: " + weapon.name);
+        //Debug.Log("Player weapon set to " + weapon.gameObject.name);
     }
 
     public void SetSpeed()

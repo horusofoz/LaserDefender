@@ -24,7 +24,7 @@ public class GameSession : MonoBehaviour {
     [SerializeField] ParticleSystem weaponBoostVFX;
 
     [Header("Other")]
-    [SerializeField] int playerMovementSpeed = 5;
+    [SerializeField] int playerMovementSpeed = 4;
     [SerializeField] List<GameObject> collectiblesList;
     [SerializeField] GameObject player;
     int score = 0;
@@ -68,9 +68,8 @@ public class GameSession : MonoBehaviour {
         //health = 100;
         //shieldHealth = 0;
         //weaponLevel = 0;
-        //playerMovementSpeed = 5;
+        //playerMovementSpeed = 4;
         //score = 0;
-        //SetPlayer();
         Destroy(gameObject);
     }
 
@@ -129,10 +128,8 @@ public class GameSession : MonoBehaviour {
             weaponLevel = Mathf.Clamp((weaponLevel + weaponBoostValue), 0, weaponsList.Count - 1);
             weapon = weaponsList[weaponLevel];
             player.GetComponent<Player>().SetWeapon();
-            Debug.Log("Weapon on GameSession set to: " + weapon.name);
             PlayWeaponBoostVFX();
         }
-        
     }
 
     private void PlayWeaponBoostVFX()

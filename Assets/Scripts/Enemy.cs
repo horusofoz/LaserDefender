@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour {
     [Header("Sound Effects")]
     [SerializeField] GameObject deathVFX;
     [SerializeField] float durationOfExplosion = 1f;
+    [SerializeField] SoundManager soundManager;
 
     private bool onScreen = false;
 
@@ -70,7 +71,7 @@ public class Enemy : MonoBehaviour {
             // Iterate rBodyCounter
             rBodyCounter++;
         }
-        SoundManager.Instance.TriggerEnemyShotSFX();
+        soundManager.TriggerEnemyShotSFX();
 
     }
 
@@ -96,7 +97,7 @@ public class Enemy : MonoBehaviour {
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
         Destroy(explosion, durationOfExplosion);
         GameSession.Instance.AddToScore(scoreValue);
-        SoundManager.Instance.TriggerEnemyDeadSFX();
+        soundManager.TriggerEnemyDeadSFX();
         Destroy(gameObject);
 
         if(collectibleItem != null)

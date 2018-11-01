@@ -39,6 +39,7 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadLeve01()
     {
+        GameSession.Instance.ResetGame();
         SceneManager.LoadScene("Level01");
     }
 
