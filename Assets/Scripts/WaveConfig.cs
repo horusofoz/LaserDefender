@@ -21,9 +21,6 @@ public class WaveConfig : ScriptableObject {
     [SerializeField] GameObject collectibleItem = null;
     [SerializeField] int enemyToSpawnCollectible = -1;
 
-    [Header("Other")]
-    [SerializeField] GameObject gameSession;
-
     public GameObject GetEnemyPrefab() { return enemyPrefab; }
 
     public List<Transform> GetWaypoints()

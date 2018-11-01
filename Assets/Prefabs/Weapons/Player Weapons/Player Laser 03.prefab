@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114424077969828416}
   m_Layer: 10
   m_Name: Right Ball Blue
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114797361952941564}
   m_Layer: 10
   m_Name: Centre Ball Blue
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 114173897087973102}
   m_Layer: 10
   m_Name: Left Ball Blue
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

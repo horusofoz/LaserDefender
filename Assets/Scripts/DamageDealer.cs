@@ -11,6 +11,8 @@ public class DamageDealer : MonoBehaviour {
     public void Hit()
     {
         if(gameObject.tag == "Projectile")
-        Destroy(gameObject);
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -16,11 +16,9 @@ MonoBehaviour:
   pathPrefab: {fileID: 1114741948912812, guid: 161207c96f51e1b44b66fc8c6d1e7600, type: 2}
   timeBetweenSpawns: 0.5
   spawnRandomFactor: 0.3
-  numberOfEnemies: 3
+  numberOfEnemies: 1
   moveSpeed: 3
-  delaySpawn: 4
+  delaySpawn: 1
   collectibleSpawnChance: 1
   collectibleItem: {fileID: 0}
   enemyToSpawnCollectible: 0
-  gameSession: {fileID: 1800344835281908, guid: 0baaf6937dc2d634bb83101a33475cf9,
-    type: 2}

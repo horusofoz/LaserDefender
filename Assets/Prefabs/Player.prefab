@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 212612450294597648}
   - component: {fileID: 60775838085566018}
   - component: {fileID: 114407265053885054}
+  - component: {fileID: 114704057679034882}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -244,12 +245,20 @@ MonoBehaviour:
   padding: 0.5
   projectileSpeed: 15
   projectileFiringPeriod: 0.2
-  soundManager: {fileID: 114921986145794914, guid: a0d641fc669a6d14ca224c2ad79c2571,
-    type: 2}
   deathVFX: {fileID: 1253651836432694, guid: d0fa38a06b1717149a63339170f4291b, type: 2}
   durationOfExplosion: 1
-  gameSession: {fileID: 114575322430536898, guid: 0baaf6937dc2d634bb83101a33475cf9,
-    type: 2}
+--- !u!114 &114704057679034882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746881713719424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d9175b632193d74ab1e48431489ddd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!212 &212288298071866284
 SpriteRenderer:
   m_ObjectHideFlags: 1

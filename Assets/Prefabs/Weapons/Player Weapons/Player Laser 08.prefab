@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114315341002839948}
   m_Layer: 10
   m_Name: Centre Laser Small Blue
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 114030152947096104}
   m_Layer: 10
   m_Name: Right Laser Small Green
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 114595671379434806}
   m_Layer: 10
   m_Name: Left Laser Small Green
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

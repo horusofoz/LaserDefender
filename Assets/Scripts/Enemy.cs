@@ -76,9 +76,22 @@ public class Enemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
-        if(!damageDealer) { return; }
-        ProcessHit(damageDealer);
+        if (onScreen)
+        {
+            DamageDealer damageDealer = other.gameObject.GetComponent<DamageDealer>();
+            if (!damageDealer)
+            {
+                return;
+            }
+            else
+            {
+                if (other.tag == "Projectile")
+                {
+                    Destroy(other);
+                }
+            }
+            ProcessHit(damageDealer);
+        }
     }
 
     private void ProcessHit(DamageDealer damageDealer)

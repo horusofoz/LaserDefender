@@ -22,5 +22,3 @@ MonoBehaviour:
   collectibleSpawnChance: 1
   collectibleItem: {fileID: 0}
   enemyToSpawnCollectible: 0
-  gameSession: {fileID: 1800344835281908, guid: 0baaf6937dc2d634bb83101a33475cf9,
-    type: 2}
