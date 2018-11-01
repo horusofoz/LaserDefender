@@ -128,7 +128,7 @@ public class GameSession : MonoBehaviour {
             weaponLevel = Mathf.Clamp((weaponLevel + weaponBoostValue), 0, weaponsList.Count - 1);
             weapon = weaponsList[weaponLevel];
             player.GetComponent<Player>().SetWeapon();
-            PlayWeaponBoostVFX();
+            //PlayWeaponBoostVFX();
         }
     }
 

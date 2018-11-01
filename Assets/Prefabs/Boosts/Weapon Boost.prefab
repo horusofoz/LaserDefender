@@ -121,6 +121,8 @@ MonoBehaviour:
   dropSpeed: 3
   weaponBoostValue: 1
   scoreValue: 1500
+  collectedVFX: {fileID: 1839319338239140, guid: 55888a111f9dcb14e8a4740d723d14b0,
+    type: 2}
 --- !u!212 &212531831731705196
 SpriteRenderer:
   m_ObjectHideFlags: 1

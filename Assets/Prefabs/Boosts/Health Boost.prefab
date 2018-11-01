@@ -121,6 +121,8 @@ MonoBehaviour:
   dropSpeed: 3
   healthValue: 25
   scoreValue: 1500
+  collectedVFX: {fileID: 1839319338239140, guid: a5e586255d599cc41ab328167e6a7912,
+    type: 2}
 --- !u!212 &212726448889837288
 SpriteRenderer:
   m_ObjectHideFlags: 1
