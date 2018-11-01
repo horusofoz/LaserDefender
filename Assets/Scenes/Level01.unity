@@ -155,23 +155,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 584cd84678aaab140879bd47f544df22, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &57347589 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1333483692532526, guid: e80598ff774a88f40a7a6c3b4431ac59,
-    type: 2}
-  m_PrefabInternal: {fileID: 1512788445}
---- !u!114 &57347590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 57347589}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976e47124e3a8394f92ac404e5423bf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgroundScrollSpeed: 0.3
 --- !u!4 &57347591 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4647716010956506, guid: e80598ff774a88f40a7a6c3b4431ac59,
@@ -646,6 +629,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 198725760804696428, guid: 5d9201bfcdbfbf048bb96604a195ab8b,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d9201bfcdbfbf048bb96604a195ab8b, type: 2}
   m_IsPrefabAsset: 0
@@ -841,6 +829,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23616272096243464, guid: e80598ff774a88f40a7a6c3b4431ac59,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7208fd3846910de43b3f6a827edffed7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e80598ff774a88f40a7a6c3b4431ac59, type: 2}
   m_IsPrefabAsset: 0

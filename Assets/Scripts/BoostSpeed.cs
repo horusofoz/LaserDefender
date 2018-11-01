@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpWeapon : MonoBehaviour {
+public class BoostSpeed : MonoBehaviour {
 
     private Rigidbody2D rigidbody2D;
     private bool active = true;
     [SerializeField] private int dropSpeed = 3;
-    [SerializeField] private int weaponBoostValue = 1;
-    [SerializeField] private int scoreValue = 1000;
+    [SerializeField] int speedValue = 1;
+    [SerializeField] int scoreValue = 1000;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,7 +28,7 @@ public class PowerUpWeapon : MonoBehaviour {
         animator.Play("Boost Collected");
 
         // Apply effect to player
-        GameSession.Instance.SetWeapon(weaponBoostValue);
+        GameSession.Instance.AddPlayerSpeed(speedValue);
         GameSession.Instance.AddToScore(scoreValue);
 
         // Remove power up object

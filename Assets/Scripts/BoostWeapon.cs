@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpHealth : MonoBehaviour {
+public class BoostWeapon : MonoBehaviour {
 
     private Rigidbody2D rigidbody2D;
     private bool active = true;
     [SerializeField] private int dropSpeed = 3;
-    [SerializeField] int healthValue = 25;
-    [SerializeField] int scoreValue = 1000;
+    [SerializeField] private int weaponBoostValue = 1;
+    [SerializeField] private int scoreValue = 1000;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -28,7 +28,7 @@ public class PowerUpHealth : MonoBehaviour {
         animator.Play("Boost Collected");
 
         // Apply effect to player
-        GameSession.Instance.AddHealth(healthValue);
+        GameSession.Instance.SetWeapon(weaponBoostValue);
         GameSession.Instance.AddToScore(scoreValue);
 
         // Remove power up object
