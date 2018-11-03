@@ -10,16 +10,16 @@ public class WaveConfig : ScriptableObject {
     [Header("Enemy")]
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject pathPrefab;
-    [SerializeField] float timeBetweenSpawns = 0.5f;
-    [SerializeField] float spawnRandomFactor = 0.3f;
+    [SerializeField] float timeBetweenSpawns = 0f;
+    //[SerializeField] float spawnRandomFactor = 0.3f;
     [SerializeField] int numberOfEnemies = 0;
     [SerializeField] float moveSpeed = 2f;
     [SerializeField] float delaySpawn = 0f;
 
-    [Header("Collectible")]
-    [SerializeField] float collectibleSpawnChance = 0.5f;
-    [SerializeField] GameObject collectibleItem = null;
-    [SerializeField] int enemyToSpawnCollectible = -1;
+    [Header("Boost")]
+    [SerializeField] float boostSpawnChance = 0.5f;
+    [SerializeField] GameObject boostItem = null;
+    [SerializeField] int enemyToSpawnBoost = -1;
 
     public GameObject GetEnemyPrefab() { return enemyPrefab; }
 
@@ -35,7 +35,7 @@ public class WaveConfig : ScriptableObject {
 
     public float GetTimeBetweenSpawns() { return timeBetweenSpawns; }
 
-    public float GetSpawnRandomFactor() { return spawnRandomFactor; }
+    //public float GetSpawnRandomFactor() { return spawnRandomFactor; }
 
     public int GetNumberOfEnemies() { return numberOfEnemies; }
 
@@ -48,41 +48,42 @@ public class WaveConfig : ScriptableObject {
 
     private void OnEnable()
     {
-        if(collectibleSpawnChance > 0)
+        if(boostSpawnChance > 0)
         {
-            float collectibleSpawnRoll = UnityEngine.Random.Range(0f, 1f);
-            if(collectibleSpawnRoll <= collectibleSpawnChance)
+            float boostSpawnRoll = UnityEngine.Random.Range(0f, 1f);
+            if(boostSpawnRoll <= boostSpawnChance)
             {
-                SetCollectibleToSpawn();
-                SetEnemyToSpawnCollectible();
+                SetBoostToSpawn();
+                SetEnemyToSpawnBoost();
             }
         }
     }
 
-    private void SetEnemyToSpawnCollectible()
+    private void SetEnemyToSpawnBoost()
     {
-        if(enemyToSpawnCollectible == -1)
+        if(enemyToSpawnBoost == -1)
         {
-            enemyToSpawnCollectible = UnityEngine.Random.Range(0, numberOfEnemies);
+            enemyToSpawnBoost = UnityEngine.Random.Range(0, numberOfEnemies);
         }
     }
 
-    private void SetCollectibleToSpawn()
+    private void SetBoostToSpawn()
     {
-        if(collectibleItem == null)
+        if(boostItem == null)
         {
-            List<GameObject> collectibleItemList = GameSession.Instance.GetCollectiblesList();
-            collectibleItem = collectibleItemList[UnityEngine.Random.Range(0, collectibleItemList.Count)];
+            Debug.Log(name + "called SetBoostToSpawn");
+            List<GameObject> boostItemList = GameSession.Instance.GetboostList();
+            boostItem = boostItemList[UnityEngine.Random.Range(0, boostItemList.Count)];
         }
     }
 
-    public int GetEnemyToSpawnCollectible()
+    public int GetEnemyToSpawnBoost()
     {
-        return enemyToSpawnCollectible;
+        return enemyToSpawnBoost;
     }
 
-    public GameObject GetCollectibleToSpawn()
+    public GameObject GetBoostToSpawn()
     {
-        return collectibleItem;
+        return boostItem;
     }
 }

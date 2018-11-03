@@ -13,13 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1300215768909900, guid: d2c422b5291733744aa3e5318276eae8,
     type: 2}
-  pathPrefab: {fileID: 1114741948912812, guid: 836c91a17c7a53f47bc56fe4d7c5e2ad, type: 2}
-  timeBetweenSpawns: 1
-  spawnRandomFactor: 0.3
-  numberOfEnemies: 1
-  moveSpeed: 3
-  delaySpawn: 2
-  collectibleSpawnChance: 1
-  collectibleItem: {fileID: 1541315960410102, guid: 75b86cd57ae2cd04d9556f82d479894d,
-    type: 2}
-  enemyToSpawnCollectible: 0
+  pathPrefab: {fileID: 1061576793675034, guid: ca76f0bfbcf744e499b057a39db8b82d, type: 2}
+  timeBetweenSpawns: 0.75
+  numberOfEnemies: 3
+  moveSpeed: 2
+  delaySpawn: 0
+  boostSpawnChance: 1
+  boostItem: {fileID: 1432918015762458, guid: 9b07cdb8a3425fb449412f171b6d29ff, type: 2}
+  enemyToSpawnBoost: 0

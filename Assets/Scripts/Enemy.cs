@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
     [Header("Enemy Stats")]
     [SerializeField] float health = 100;
     [SerializeField] int scoreValue;
-    [SerializeField] GameObject collectibleItem = null;
+    [SerializeField] GameObject boostItem = null;
 
     [Header("Projectile")]
     float shotCounter;
@@ -112,10 +112,10 @@ public class Enemy : MonoBehaviour {
         SoundManager.Instance.TriggerEnemyDeadSFX();
         Destroy(gameObject);
 
-        if(collectibleItem != null)
+        if(boostItem != null)
         {
-            Instantiate(collectibleItem, transform.position, Quaternion.identity);
-            Debug.Log("Spawning collectible: " + collectibleItem.name);
+            Instantiate(boostItem, transform.position, Quaternion.identity);
+            Debug.Log("Spawning boost: " + boostItem.name);
         }
 
         if(gameObject.name.StartsWith("Boss"))
@@ -124,9 +124,9 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public void SetCollectibleItem(GameObject collectible)
+    public void SetBoostItem(GameObject boost)
     {
-        collectibleItem = collectible;
+        boostItem = boost;
     }
 
     private void OnBecameVisible()

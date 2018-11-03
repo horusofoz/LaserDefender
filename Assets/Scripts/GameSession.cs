@@ -25,7 +25,7 @@ public class GameSession : MonoBehaviour {
 
     [Header("Other")]
     [SerializeField] int playerMovementSpeed = 4;
-    [SerializeField] List<GameObject> collectiblesList;
+    [SerializeField] List<GameObject> boostList;
     [SerializeField] GameObject player;
     int score = 0;
 
@@ -111,9 +111,9 @@ public class GameSession : MonoBehaviour {
         
     }
 
-    public List<GameObject> GetCollectiblesList()
+    public List<GameObject> GetboostList()
     {
-        return collectiblesList;
+        return boostList;
     }
 
     public GameObject GetWeapon()

@@ -48,10 +48,9 @@ public class Spawner : MonoBehaviour {
 
             
 
-            if(enemyCount == waveConfig.GetEnemyToSpawnCollectible())
+            if(enemyCount == waveConfig.GetEnemyToSpawnBoost())
             {
-                newEnemy.GetComponent<Enemy>().SetCollectibleItem(waveConfig.GetCollectibleToSpawn());
-                //Debug.Log("Set collectiable to spawn " + waveConfig.GetCollectibleToSpawn() + " on Enemy " + enemyCount);
+                newEnemy.GetComponent<Enemy>().SetBoostItem(waveConfig.GetBoostToSpawn());
             }
 
             yield return new WaitForSeconds(waveConfig.GetTimeBetweenSpawns());
